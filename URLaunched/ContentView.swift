@@ -8,9 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var vendorsModel: [Vendor] = []
+    
+        func fdfd() {
+            let fixtureData = DataMock.validUserListData
+    
+            let networkSession = NetworkSessionMock()
+            networkSession.data = fixtureData
+            networkSession.error = nil
+    
+            let networkManager = NetworkManager(session: networkSession)
+    
+            var expectedResults: [Vendor]?
+            var expectedError: Error?
+    
+            VendorsLoader.fetchUsers(
+                manager: networkManager,
+                completion: { response in
+                    switch response {
+                    case let .success(result):
+                        expectedResults = result
+                        vendorsModel = result
+                    case let .failure(error):
+                        expectedError = error
+                    }
+                }
+            )
+        }
+    
     var body: some View {
         List {
-            ForEach(1...4, id: \.self) { index in
+            ForEach(vendorsModel, id: \.self) { index in
                 VStack(alignment: .leading) {
                     ZStack {
                         Image("template")
@@ -23,15 +52,42 @@ struct ContentView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
                 }
-                
             }
         }
         .listStyle(.plain)
+        .onAppear(perform: fdfd)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
+//    func fdfd() -> Vendors? {
+//        let fixtureData = DataFixtures.validUserListData
+//
+//        let networkSession = NetworkSessionMock()
+//        networkSession.data = fixtureData
+//        networkSession.error = nil
+//
+//        let networkManager = NetworkManager(session: networkSession)
+//
+//        var expectedResults: Vendors?
+//        var expectedError: Error?
+//
+//        UserListLoader.fetchUsers(
+//            manager: networkManager,
+//            completion: { response in
+//                switch response {
+//                case let .success(result):
+//                    expectedResults = result
+//                case let .failure(error):
+//                    expectedError = error
+//                }
+//            }
+//        )
+//        return expectedResults
+//    }
+    
     static var previews: some View {
-        ContentView()
+        ContentView(vendorsModel: [Vendor]())
     }
 }

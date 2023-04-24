@@ -13,7 +13,9 @@
 		42E02C1529F686E000681588 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C1429F686E000681588 /* Preview Assets.xcassets */; };
 		42E02C1D29F6970200681588 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C1C29F6970200681588 /* NetworkManager.swift */; };
 		42E02C2129F6996B00681588 /* VendorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2029F6996B00681588 /* VendorsModel.swift */; };
-		42E02C2529F69BFF00681588 /* VendorsMockableData.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C2429F69BFF00681588 /* VendorsMockableData.strings */; };
+		42E02C2529F69BFF00681588 /* VendorsMockableData.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C2429F69BFF00681588 /* VendorsMockableData.json */; };
+		42E02C2729F72B6000681588 /* VendorsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2629F72B6000681588 /* VendorsLoader.swift */; };
+		42E02C2929F72C3300681588 /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2829F72C3300681588 /* DataMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,9 @@
 		42E02C1429F686E000681588 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42E02C1C29F6970200681588 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		42E02C2029F6996B00681588 /* VendorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsModel.swift; sourceTree = "<group>"; };
-		42E02C2429F69BFF00681588 /* VendorsMockableData.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = VendorsMockableData.strings; sourceTree = "<group>"; };
+		42E02C2429F69BFF00681588 /* VendorsMockableData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VendorsMockableData.json; sourceTree = "<group>"; };
+		42E02C2629F72B6000681588 /* VendorsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsLoader.swift; sourceTree = "<group>"; };
+		42E02C2829F72C3300681588 /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				42E02C1C29F6970200681588 /* NetworkManager.swift */,
+				42E02C2629F72B6000681588 /* VendorsLoader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -95,7 +100,8 @@
 		42E02C2329F69B9F00681588 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				42E02C2429F69BFF00681588 /* VendorsMockableData.strings */,
+				42E02C2429F69BFF00681588 /* VendorsMockableData.json */,
+				42E02C2829F72C3300681588 /* DataMock.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -158,7 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E02C2529F69BFF00681588 /* VendorsMockableData.strings in Resources */,
+				42E02C2529F69BFF00681588 /* VendorsMockableData.json in Resources */,
 				42E02C1529F686E000681588 /* Preview Assets.xcassets in Resources */,
 				42E02C1229F686E000681588 /* Assets.xcassets in Resources */,
 			);
@@ -171,10 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E02C2729F72B6000681588 /* VendorsLoader.swift in Sources */,
 				42E02C1D29F6970200681588 /* NetworkManager.swift in Sources */,
 				42E02C1029F686DD00681588 /* ContentView.swift in Sources */,
 				42E02C0E29F686DD00681588 /* URLaunchedApp.swift in Sources */,
 				42E02C2129F6996B00681588 /* VendorsModel.swift in Sources */,
+				42E02C2929F72C3300681588 /* DataMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

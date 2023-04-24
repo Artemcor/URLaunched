@@ -9,11 +9,13 @@ import Foundation
 
 // MARK: - Vendors
 struct Vendors: Codable {
+    
     let vendors: [Vendor]
 }
 
 // MARK: - Vendor
-struct Vendor: Codable {
+struct Vendor: Codable, Hashable {
+    
     let id: Int
     let companyName, areaServed, shopType: String
     let favorited, follow: Bool
@@ -35,17 +37,19 @@ struct Vendor: Codable {
 }
 
 // MARK: - Category
-struct Category: Codable {
+struct Category: Codable, Hashable {
+    
     let id: Int
     let name: String
     let image: CoverPhoto
 }
 
 // MARK: - CoverPhoto
-struct CoverPhoto: Codable {
+struct CoverPhoto: Codable, Hashable {
+    
     let id: Int
     let mediaURL: String
-    let mediaType: MediaType
+    let mediaType: String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -59,7 +63,7 @@ enum MediaType: String, Codable {
 }
 
 // MARK: - Tag
-struct Tag: Codable {
+struct Tag: Codable, Hashable {
     let id: Int
     let name, purpose: String
 }

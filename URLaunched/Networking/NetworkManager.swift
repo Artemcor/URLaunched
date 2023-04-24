@@ -18,11 +18,9 @@ class NetworkManager {
         self.session = session
     }
     
-    func makeRequest<T: Decodable>(
-        with url: URL,
-        decode decodable: T.Type,
-        completionHandler: @escaping (Result<T, Error>) -> Void
-    ) {
+    func makeRequest<T: Decodable>(with url: URL,
+                                   decode decodable: T.Type,
+                                   completionHandler: @escaping (Result<T, Error>) -> Void) {
         session.loadData(with: URLRequest(url: url)) { data, error in
             guard let data = data else {
                 completionHandler(.failure(error!))
@@ -47,5 +45,17 @@ extension URLSession: NetworkSession {
         }
         
         task.resume()
+    }
+}
+
+class NetworkSessionMock: NetworkSession {
+    private(set) var requestUrl: URL?
+    
+    var data: Data?
+    var error: Error?
+    
+    func loadData(with urlRequest: URLRequest, completionHandler: @escaping (Data?, Error?) -> Void) {
+        requestUrl = urlRequest.url
+        completionHandler(data, error)
     }
 }
