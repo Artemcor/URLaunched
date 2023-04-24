@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List {
+            ForEach(1...4, id: \.self) { index in
+                VStack(alignment: .leading) {
+                    ZStack {
+                        Image("template")
+                            .resizable()
+                            .frame(width: .infinity, height: 170)
+                            .cornerRadius(10)
+                    }
+                    Text("North St. Butchery")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                }
+                
+            }
         }
-        .padding()
+        .listStyle(.plain)
     }
 }
 
