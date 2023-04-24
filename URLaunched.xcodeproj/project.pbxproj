@@ -13,6 +13,7 @@
 		42E02C1529F686E000681588 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C1429F686E000681588 /* Preview Assets.xcassets */; };
 		42E02C1D29F6970200681588 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C1C29F6970200681588 /* NetworkManager.swift */; };
 		42E02C2129F6996B00681588 /* VendorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2029F6996B00681588 /* VendorsModel.swift */; };
+		42E02C2529F69BFF00681588 /* VendorsMockableData.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C2429F69BFF00681588 /* VendorsMockableData.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		42E02C1429F686E000681588 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42E02C1C29F6970200681588 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		42E02C2029F6996B00681588 /* VendorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsModel.swift; sourceTree = "<group>"; };
+		42E02C2429F69BFF00681588 /* VendorsMockableData.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = VendorsMockableData.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				42E02C0F29F686DD00681588 /* ContentView.swift */,
 				42E02C1F29F6994600681588 /* Models */,
 				42E02C1B29F696BD00681588 /* Networking */,
+				42E02C2329F69B9F00681588 /* Resources */,
 				42E02C1129F686E000681588 /* Assets.xcassets */,
 				42E02C1329F686E000681588 /* Preview Content */,
 			);
@@ -87,6 +90,14 @@
 				42E02C2029F6996B00681588 /* VendorsModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		42E02C2329F69B9F00681588 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42E02C2429F69BFF00681588 /* VendorsMockableData.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E02C2529F69BFF00681588 /* VendorsMockableData.strings in Resources */,
 				42E02C1529F686E000681588 /* Preview Assets.xcassets in Resources */,
 				42E02C1229F686E000681588 /* Assets.xcassets in Resources */,
 			);
