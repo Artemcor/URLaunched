@@ -14,7 +14,7 @@ struct Vendors: Codable {
 }
 
 // MARK: - Vendor
-struct Vendor: Codable, Hashable {
+struct Vendor: Codable, Hashable, Identifiable {
     
     let id: Int
     let companyName, areaServed, shopType: String
@@ -37,7 +37,7 @@ struct Vendor: Codable, Hashable {
 }
 
 // MARK: - Category
-struct Category: Codable, Hashable {
+struct Category: Codable, Hashable, Identifiable {
     
     let id: Int
     let name: String
@@ -63,7 +63,7 @@ enum MediaType: String, Codable {
 }
 
 // MARK: - Tag
-struct Tag: Codable, Hashable {
+struct Tag: Codable, Hashable, Identifiable {
     let id: Int
     let name, purpose: String
 }
