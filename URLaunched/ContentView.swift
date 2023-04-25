@@ -11,27 +11,23 @@ struct ContentView: View {
     
     @State var vendorsModel: [Vendor] = []
     
-        func fdfd() {
-            let fixtureData = DataMock.validUserListData
+        func loadVendors() {
+            let dataMock = DataMock.validUserListData
     
             let networkSession = NetworkSessionMock()
-            networkSession.data = fixtureData
+            networkSession.data = dataMock
             networkSession.error = nil
     
             let networkManager = NetworkManager(session: networkSession)
-    
-            var expectedResults: [Vendor]?
-            var expectedError: Error?
     
             VendorsLoader.fetchUsers(
                 manager: networkManager,
                 completion: { response in
                     switch response {
                     case let .success(result):
-                        expectedResults = result
                         vendorsModel = result
                     case let .failure(error):
-                        expectedError = error
+                        #warning("add handler")
                     }
                 }
             )
@@ -55,37 +51,11 @@ struct ContentView: View {
             }
         }
         .listStyle(.plain)
-        .onAppear(perform: fdfd)
+        .onAppear(perform: loadVendors)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    
-//    func fdfd() -> Vendors? {
-//        let fixtureData = DataFixtures.validUserListData
-//
-//        let networkSession = NetworkSessionMock()
-//        networkSession.data = fixtureData
-//        networkSession.error = nil
-//
-//        let networkManager = NetworkManager(session: networkSession)
-//
-//        var expectedResults: Vendors?
-//        var expectedError: Error?
-//
-//        UserListLoader.fetchUsers(
-//            manager: networkManager,
-//            completion: { response in
-//                switch response {
-//                case let .success(result):
-//                    expectedResults = result
-//                case let .failure(error):
-//                    expectedError = error
-//                }
-//            }
-//        )
-//        return expectedResults
-//    }
     
     static var previews: some View {
         ContentView(vendorsModel: [Vendor]())
