@@ -13,18 +13,18 @@ struct ContentView: View {
     var body: some View {
         List(vendorsModel) { vendor in
             VStack(alignment: .leading) {
-                MainCellImage(vendor: vendor)
+                MainCellImageView(vendor: vendor)
                 
                 Text(vendor.companyName)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primary)
-                
+                    .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
+                    .foregroundColor(Color("gray_primary"))
+
                 CategoriesView(vendor: vendor)
                 
                 Text(tagsString(vendor.tags))
+                    .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
+                    .foregroundColor(Color("gray_secondary"))
             }
-            .padding()
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)

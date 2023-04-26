@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420E341229F93B7C0009D4E1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB629F9350C00004389 /* OpenSans-Regular.ttf */; };
+		420E341329F93B7F0009D4E1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB529F934DB00004389 /* OpenSans-Bold.ttf */; };
+		420E341529F95CF50009D4E1 /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420E341429F95CF50009D4E1 /* CategoryRowView.swift */; };
+		422A6FB829F9353100004389 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB729F9353100004389 /* OFL.txt */; };
 		42E02C0E29F686DD00681588 /* URLaunchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C0D29F686DD00681588 /* URLaunchedApp.swift */; };
 		42E02C1029F686DD00681588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C0F29F686DD00681588 /* ContentView.swift */; };
 		42E02C1229F686E000681588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E02C1129F686E000681588 /* Assets.xcassets */; };
@@ -18,11 +22,16 @@
 		42E02C2929F72C3300681588 /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2829F72C3300681588 /* DataMock.swift */; };
 		42E02C2C29F7D9B300681588 /* SVGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C2B29F7D9B300681588 /* SVGImageView.swift */; };
 		42E02C2F29F7DA7A00681588 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42E02C2E29F7DA7A00681588 /* SVGKit */; };
-		42E02C3229F865D000681588 /* MainCellImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C3129F865D000681588 /* MainCellImage.swift */; };
+		42E02C3229F865D000681588 /* MainCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C3129F865D000681588 /* MainCellImageView.swift */; };
 		42E02C3429F8662100681588 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C3329F8662100681588 /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420E341429F95CF50009D4E1 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
+		422A6FB529F934DB00004389 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		422A6FB629F9350C00004389 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		422A6FB729F9353100004389 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		422A6FB929F935C800004389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		42E02C0A29F686DD00681588 /* URLaunched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLaunched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E02C0D29F686DD00681588 /* URLaunchedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLaunchedApp.swift; sourceTree = "<group>"; };
 		42E02C0F29F686DD00681588 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,7 +43,7 @@
 		42E02C2629F72B6000681588 /* VendorsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsLoader.swift; sourceTree = "<group>"; };
 		42E02C2829F72C3300681588 /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
 		42E02C2B29F7D9B300681588 /* SVGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageView.swift; sourceTree = "<group>"; };
-		42E02C3129F865D000681588 /* MainCellImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellImage.swift; sourceTree = "<group>"; };
+		42E02C3129F865D000681588 /* MainCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellImageView.swift; sourceTree = "<group>"; };
 		42E02C3329F8662100681588 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422A6FB429F9347600004389 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				422A6FB729F9353100004389 /* OFL.txt */,
+				422A6FB629F9350C00004389 /* OpenSans-Regular.ttf */,
+				422A6FB529F934DB00004389 /* OpenSans-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		42E02C0129F686DD00681588 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +88,7 @@
 		42E02C0C29F686DD00681588 /* URLaunched */ = {
 			isa = PBXGroup;
 			children = (
+				422A6FB929F935C800004389 /* Info.plist */,
 				42E02C0D29F686DD00681588 /* URLaunchedApp.swift */,
 				42E02C0F29F686DD00681588 /* ContentView.swift */,
 				42E02C3029F865BB00681588 /* Views */,
@@ -110,6 +130,7 @@
 		42E02C2329F69B9F00681588 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				422A6FB429F9347600004389 /* Fonts */,
 				42E02C2429F69BFF00681588 /* VendorsMockableData.json */,
 				42E02C2829F72C3300681588 /* DataMock.swift */,
 			);
@@ -127,8 +148,9 @@
 		42E02C3029F865BB00681588 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				42E02C3129F865D000681588 /* MainCellImage.swift */,
+				42E02C3129F865D000681588 /* MainCellImageView.swift */,
 				42E02C3329F8662100681588 /* CategoriesView.swift */,
+				420E341429F95CF50009D4E1 /* CategoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,8 +219,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420E341229F93B7C0009D4E1 /* OpenSans-Regular.ttf in Resources */,
 				42E02C2529F69BFF00681588 /* VendorsMockableData.json in Resources */,
+				420E341329F93B7F0009D4E1 /* OpenSans-Bold.ttf in Resources */,
 				42E02C1529F686E000681588 /* Preview Assets.xcassets in Resources */,
+				422A6FB829F9353100004389 /* OFL.txt in Resources */,
 				42E02C1229F686E000681588 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,12 +237,13 @@
 			files = (
 				42E02C2729F72B6000681588 /* VendorsLoader.swift in Sources */,
 				42E02C1D29F6970200681588 /* NetworkManager.swift in Sources */,
+				420E341529F95CF50009D4E1 /* CategoryRowView.swift in Sources */,
 				42E02C1029F686DD00681588 /* ContentView.swift in Sources */,
 				42E02C0E29F686DD00681588 /* URLaunchedApp.swift in Sources */,
 				42E02C2C29F7D9B300681588 /* SVGImageView.swift in Sources */,
 				42E02C3429F8662100681588 /* CategoriesView.swift in Sources */,
 				42E02C2129F6996B00681588 /* VendorsModel.swift in Sources */,
-				42E02C3229F865D000681588 /* MainCellImage.swift in Sources */,
+				42E02C3229F865D000681588 /* MainCellImageView.swift in Sources */,
 				42E02C2929F72C3300681588 /* DataMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +376,7 @@
 				DEVELOPMENT_TEAM = Z99V4XXVDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = URLaunched/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,6 +406,7 @@
 				DEVELOPMENT_TEAM = Z99V4XXVDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = URLaunched/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

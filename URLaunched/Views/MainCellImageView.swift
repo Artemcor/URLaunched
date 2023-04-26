@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainCellImage: View {
+struct MainCellImageView: View {
     let vendor: Vendor
     
     var body: some View {
@@ -23,14 +23,16 @@ struct MainCellImage: View {
         .overlay(alignment: .topTrailing) {
             Image(systemName: vendor.favorited ? "bookmark.fill" : "bookmark")
                 .padding(10)
-                .foregroundColor(vendor.favorited ? .white : .green)
+                .foregroundColor(vendor.favorited ? .white : Color("green_mark"))
                 .background(Circle()
-                    .foregroundColor(vendor.favorited ? .green : .white))
+                    .foregroundColor(vendor.favorited ? Color("green_mark") : .white))
                 .padding(.top, 10)
                 .padding(.trailing, 10)
         }
         .overlay(alignment: .bottomLeading) {
             Text(vendor.areaServed)
+                .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
+                .foregroundColor(Color("gray_primary"))
                 .padding(.horizontal, 8)
                 .padding(.vertical, 2)
                 .foregroundColor(.gray)
@@ -46,7 +48,7 @@ struct MainCellImage: View {
 struct MainCellImage_Previews: PreviewProvider {
     
     static var previews: some View {
-        MainCellImage(vendor: Vendor(id: 99,
+        MainCellImageView(vendor: Vendor(id: 99,
                                      companyName: "Florists + Fashion",
                                      areaServed: "Newry",
                                      shopType: "Bike Shop",

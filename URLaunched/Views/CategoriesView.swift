@@ -15,22 +15,10 @@ struct CategoriesView: View {
             ForEach(0..<vendor.categories.count, id: \.self) { index in
                 if index % 2 == 0 {
                     HStack(spacing: -5) {
-                        Label {
-                            Text(vendor.categories[index].name)
-                                .offset(CGSize(width: -15, height: 0))
-                        } icon: {
-                            SVGKFastImageViewSUI(url: URL(string: vendor.categories[index].image.mediaURL)!, size: CGSize(width: 20,height: 20))
-                                .frame(width: 20, height: 20)
-                        }
+                        CategoryRowView(category: vendor.categories[index])
                         
                         if index + 1 < vendor.categories.count {
-                            Label {
-                                Text(vendor.categories[index + 1].name)
-                                    .offset(CGSize(width: -15, height: 0))
-                            } icon: {
-                                SVGKFastImageViewSUI(url: URL(string: vendor.categories[index + 1].image.mediaURL)!, size: CGSize(width: 20,height: 20))
-                                    .frame(width: 20, height: 20)
-                            }
+                            CategoryRowView(category: vendor.categories[index + 1])
                         }
                     }
                 }
@@ -38,4 +26,3 @@ struct CategoriesView: View {
         }
     }
 }
-
