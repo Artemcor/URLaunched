@@ -13,9 +13,7 @@ struct ContentView: View {
     var body: some View {
         List(vendorsModel) { vendor in
             VStack(alignment: .leading) {
-                ZStack {
-                    MainCellImage(vendor: vendor)
-                }
+                MainCellImage(vendor: vendor)
                 
                 Text(vendor.companyName)
                     .font(.headline)
