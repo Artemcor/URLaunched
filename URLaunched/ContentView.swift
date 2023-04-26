@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var vendorsModel: [Vendor] = []
+    @State private var vendors: [Vendor] = []
+    @State private var searchText = ""
     
     var body: some View {
-        List(vendorsModel) { vendor in
-            VStack(alignment: .leading) {
-                MainCellImageView(vendor: vendor)
-                
-                Text(vendor.companyName)
-                    .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
-                    .foregroundColor(Color("gray_primary"))
+        VStack {
+            SearchBar(searchText: $searchText)
+                .padding(.horizontal, 16)
 
-                CategoriesView(vendor: vendor)
-                
-                Text(tagsString(vendor.tags))
-                    .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
-                    .foregroundColor(Color("gray_secondary"))
+            List {
+                ForEach(vendors.filter({ searchText.count < 3 ? true : $0.companyName.contains(searchText) })) { vendor in
+                    
+                    VStack(alignment: .leading) {
+                        MainCellImageView(vendor: vendor)
+                        
+                        Text(vendor.companyName)
+                            .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
+                            .foregroundColor(Color("gray_primary"))
+                        
+                        CategoriesView(vendor: vendor)
+                        
+                        Text(tagsString(vendor.tags))
+                            .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
+                            .foregroundColor(Color("gray_secondary"))
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+                }
             }
-            .listRowSeparator(.hidden)
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
         .onAppear(perform: loadVendors)
     }
     
@@ -45,7 +55,7 @@ struct ContentView: View {
             completion: { response in
                 switch response {
                 case let .success(result):
-                    vendorsModel = result
+                    vendors = result
                 case let .failure(error):
 #warning("add handler")
                 }

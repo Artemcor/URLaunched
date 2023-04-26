@@ -10,6 +10,7 @@
 		420E341229F93B7C0009D4E1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB629F9350C00004389 /* OpenSans-Regular.ttf */; };
 		420E341329F93B7F0009D4E1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB529F934DB00004389 /* OpenSans-Bold.ttf */; };
 		420E341529F95CF50009D4E1 /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420E341429F95CF50009D4E1 /* CategoryRowView.swift */; };
+		420E341729F96EC90009D4E1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420E341629F96EC90009D4E1 /* SearchBar.swift */; };
 		422A6FB829F9353100004389 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422A6FB729F9353100004389 /* OFL.txt */; };
 		42E02C0E29F686DD00681588 /* URLaunchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C0D29F686DD00681588 /* URLaunchedApp.swift */; };
 		42E02C1029F686DD00681588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E02C0F29F686DD00681588 /* ContentView.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		420E341429F95CF50009D4E1 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
+		420E341629F96EC90009D4E1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		422A6FB529F934DB00004389 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		422A6FB629F9350C00004389 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		422A6FB729F9353100004389 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				42E02C3129F865D000681588 /* MainCellImageView.swift */,
 				42E02C3329F8662100681588 /* CategoriesView.swift */,
 				420E341429F95CF50009D4E1 /* CategoryRowView.swift */,
+				420E341629F96EC90009D4E1 /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				42E02C0E29F686DD00681588 /* URLaunchedApp.swift in Sources */,
 				42E02C2C29F7D9B300681588 /* SVGImageView.swift in Sources */,
 				42E02C3429F8662100681588 /* CategoriesView.swift in Sources */,
+				420E341729F96EC90009D4E1 /* SearchBar.swift in Sources */,
 				42E02C2129F6996B00681588 /* VendorsModel.swift in Sources */,
 				42E02C3229F865D000681588 /* MainCellImageView.swift in Sources */,
 				42E02C2929F72C3300681588 /* DataMock.swift in Sources */,
