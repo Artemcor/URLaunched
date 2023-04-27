@@ -50,7 +50,7 @@ class VendorsViewModel: ObservableObject {
                 case let .success(result):
                     self.initialVendors = result
                 case let .failure(error):
-#warning("add handler")
+                    print("Error - data is not loaded: \(error.localizedDescription)")
                 }
             }
         )

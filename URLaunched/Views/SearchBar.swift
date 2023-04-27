@@ -17,8 +17,6 @@ struct SearchBar: View {
             .padding(7)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40)
             .background(.white)
-        
-        //                .background(Color(.systemGray6))
             .cornerRadius(16)
             .shadow(color: Color("gray_searchBarShadow"),  radius: 14, x: 0, y: 6)
             .overlay(

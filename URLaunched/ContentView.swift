@@ -15,28 +15,46 @@ struct ContentView: View {
         VStack {
             SearchBar(searchText: $vendorsViewModel.searchText)
                 .padding(.horizontal, 16)
-            
-            List(vendorsViewModel.vendors) { vendor in
+
+            if vendorsViewModel.vendors.isEmpty {
+                Spacer()
                 
-                VStack(alignment: .leading) {
-                    MainCellImageView(vendor: vendor)
+                VStack {
+                    Text("Sorry! No results found...")
+                        .font(.custom("OpenSans-Bold", size: 24, relativeTo: .headline))
+                        .foregroundColor(Color("green_dark"))
                     
-                    Text(vendor.companyName)
-                        .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
+                    Text("Please try a different search request or browse businesses from the list")
+                        .font(.custom("OpenSans-Regular", size: 16, relativeTo: .headline))
                         .foregroundColor(Color("gray_primary"))
-                    
-                    CategoriesView(vendor: vendor)
-                    
-                    Text(tagsString(vendor.tags))
-                        .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
-                        .foregroundColor(Color("gray_secondary"))
+                        .multilineTextAlignment(.center)
                 }
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
-                .listRowBackground(Color.clear)
+                
+                Spacer()
+                
+            } else {
+                List(vendorsViewModel.vendors) { vendor in
+                    
+                    VStack(alignment: .leading) {
+                        MainCellImageView(vendor: vendor)
+                        
+                        Text(vendor.companyName)
+                            .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
+                            .foregroundColor(Color("gray_primary"))
+                        
+                        CategoriesView(vendor: vendor)
+                        
+                        Text(tagsString(vendor.tags))
+                            .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
+                            .foregroundColor(Color("gray_secondary"))
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+                    .listRowBackground(Color.clear)
+                }
+                .listStyle(.plain)
             }
         }
-        .listStyle(.plain)
     }
     
     private func tagsString(_ tags: [Tag]) -> String {

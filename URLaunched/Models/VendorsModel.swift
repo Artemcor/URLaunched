@@ -9,13 +9,11 @@ import Foundation
 
 // MARK: - Vendors
 struct Vendors: Codable {
-    
     let vendors: [Vendor]
 }
 
 // MARK: - Vendor
 struct Vendor: Codable, Hashable, Identifiable {
-    
     let id: Int
     let companyName, areaServed, shopType: String
     let favorited, follow: Bool
@@ -38,7 +36,6 @@ struct Vendor: Codable, Hashable, Identifiable {
 
 // MARK: - Category
 struct Category: Codable, Hashable, Identifiable {
-    
     let id: Int
     let name: String
     let image: CoverPhoto
@@ -46,7 +43,6 @@ struct Category: Codable, Hashable, Identifiable {
 
 // MARK: - CoverPhoto
 struct CoverPhoto: Codable, Hashable {
-    
     let id: Int
     let mediaURL: String
     let mediaType: String
