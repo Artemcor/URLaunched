@@ -35,10 +35,17 @@ struct ContentView: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
                 }
+                .listRowBackground(Color.clear)
             }
             .listStyle(.plain)
         }
-        .onAppear(perform: loadVendors)
+        .onAppear {
+            UITableView.appearance().backgroundColor = .clear
+
+            if vendors.isEmpty {
+                loadVendors()
+            }
+        }
     }
     
     private func loadVendors() {

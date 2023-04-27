@@ -19,7 +19,9 @@ struct MainCellImageView: View {
             Color.gray
         }
         .frame(height: 170)
-        .cornerRadius(10)
+        .overlay {
+            LinearGradient(gradient: Gradient(colors: [Color("mainCellImageGradientTop"), Color("mainCellImageGradientBottom")]), startPoint: UnitPoint(x:  0.5, y: 0.5), endPoint: .bottom)
+        }
         .overlay(alignment: .topTrailing) {
             Image(systemName: vendor.favorited ? "bookmark.fill" : "bookmark")
                 .padding(10)
@@ -42,6 +44,7 @@ struct MainCellImageView: View {
                 .padding(.bottom, 8)
                 .padding(.leading, 8)
         }
+        .cornerRadius(10)
     }
 }
 
