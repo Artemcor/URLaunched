@@ -19,6 +19,13 @@ struct SearchBar: View {
             .background(.white)
             .cornerRadius(16)
             .shadow(color: Color("gray_searchBarShadow"),  radius: 14, x: 0, y: 6)
+            .onSubmit {
+                if searchText.isEmpty {
+                    withAnimation {
+                        isEditing = false
+                    }
+                }
+            }
             .overlay(
                 HStack {
                     Image("icon_search")
