@@ -102,9 +102,8 @@
 			children = (
 				422A6FB929F935C800004389 /* Info.plist */,
 				42E02C0D29F686DD00681588 /* URLaunchedApp.swift */,
-				42E02C0F29F686DD00681588 /* ContentView.swift */,
-				42B1C08929FA8C9A001D03E3 /* ViewModels */,
 				42E02C3029F865BB00681588 /* Views */,
+				42B1C08929FA8C9A001D03E3 /* ViewModels */,
 				42E02C1F29F6994600681588 /* Models */,
 				42E02C1B29F696BD00681588 /* Networking */,
 				42E02C2A29F7D99900681588 /* Helpers */,
@@ -161,6 +160,7 @@
 		42E02C3029F865BB00681588 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42E02C0F29F686DD00681588 /* ContentView.swift */,
 				42E02C3129F865D000681588 /* MainCellImageView.swift */,
 				42E02C3329F8662100681588 /* CategoriesView.swift */,
 				420E341429F95CF50009D4E1 /* CategoryRowView.swift */,
