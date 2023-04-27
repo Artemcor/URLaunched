@@ -8,66 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var vendors: [Vendor] = []
-    @State private var searchText = ""
+    
+    @ObservedObject private var vendorsViewModel = VendorsViewModel()
     
     var body: some View {
         VStack {
-            SearchBar(searchText: $searchText)
+            SearchBar(searchText: $vendorsViewModel.searchText)
                 .padding(.horizontal, 16)
-
-            List {
-                ForEach(vendors.filter({ searchText.count < 3 ? true : $0.companyName.contains(searchText) })) { vendor in
+            
+            List(vendorsViewModel.vendors) { vendor in
+                
+                VStack(alignment: .leading) {
+                    MainCellImageView(vendor: vendor)
                     
-                    VStack(alignment: .leading) {
-                        MainCellImageView(vendor: vendor)
-                        
-                        Text(vendor.companyName)
-                            .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
-                            .foregroundColor(Color("gray_primary"))
-                        
-                        CategoriesView(vendor: vendor)
-                        
-                        Text(tagsString(vendor.tags))
-                            .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
-                            .foregroundColor(Color("gray_secondary"))
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+                    Text(vendor.companyName)
+                        .font(.custom("OpenSans-Bold", size: 16, relativeTo: .headline))
+                        .foregroundColor(Color("gray_primary"))
+                    
+                    CategoriesView(vendor: vendor)
+                    
+                    Text(tagsString(vendor.tags))
+                        .font(.custom("OpenSans-Regular", size: 14, relativeTo: .body))
+                        .foregroundColor(Color("gray_secondary"))
                 }
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
                 .listRowBackground(Color.clear)
             }
-            .listStyle(.plain)
         }
-        .onAppear {
-            UITableView.appearance().backgroundColor = .clear
-
-            if vendors.isEmpty {
-                loadVendors()
-            }
-        }
-    }
-    
-    private func loadVendors() {
-        let dataMock = DataMock.validUserListData
-        
-        let networkSession = NetworkSessionMock()
-        networkSession.data = dataMock
-        networkSession.error = nil
-        
-        let networkManager = NetworkManager(session: networkSession)
-        
-        VendorsLoader.fetchUsers(
-            manager: networkManager,
-            completion: { response in
-                switch response {
-                case let .success(result):
-                    vendors = result
-                case let .failure(error):
-#warning("add handler")
-                }
-            }
-        )
+        .listStyle(.plain)
     }
     
     private func tagsString(_ tags: [Tag]) -> String {
